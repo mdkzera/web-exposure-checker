@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#10161f">
+<title>Web Exposure Checker</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='none' stroke='%235b9dff' stroke-width='2'/%3E%3Ccircle cx='8' cy='8' r='2.2' fill='%235b9dff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Web Exposure Checker</h1>
+  <label for="input" class="sr">URLs or IPs, one per line</label>
+  <textarea id="input" spellcheck="false" autocomplete="off" placeholder="https://example.com&#10;http://example.org&#10;192.0.2.10&#10;portal.example.net"></textarea>
+  <div class="meta"><span id="count">0/50</span><span id="msg" role="status"></span></div>
+  <div class="actions">
+    <button id="start" type="button">START SCAN</button>
+    <button id="csv" type="button" class="ghost" disabled>EXPORT CSV</button>
+  </div>
+  <progress id="prog" value="0" max="1" aria-label="Scan progress"></progress>
+  <div class="wrap" id="wrap" hidden>
+    <table>
+      <thead><tr><th>URL</th><th>Web Interface</th><th>Port 80 Open</th><th>Port 443 Open</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
